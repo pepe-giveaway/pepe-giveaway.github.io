@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box with LocalStorage to store data using AngularJS 1.X V2 (Randomize Scroll)</title>
+
+    <!-- ----Added CB Script----- -->
+    <!-- ----Added CB Script----- -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="assets_CB/CB-bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets_CB/inputComment-style_Max.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js"></script>
+    <script src="assets_CB/app_commentArr.js"></script>
+    <script src="assets_CB/app_commentRandomV4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <!-- ----Added CB Script End Here----- -->
+    <!-- ----Added CB Script End Here----- -->
+    
+
+
+</head>
+<body>
+
+
+
+    <div class="container" ng-app="CommentApp">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 commentBox">
+           <div ng-controller="PostController">
+                   <h4 class="postComment"><span>Post Comment</span></h4>
+                   
+                <form>
+                    <div class="input-group"> 
+                        <span class="input-group-addon" id="basic-addon1">
+                          <label>
+                        <img class="profile-img-icon" ng-model='imgURL' ng-src="{{imageSrc}}" src="assets_CB/editProfile-BRISE.png"/>
+                        <br>
+                        <label for="files" class="editProfileLabel">Add photo</label>
+                        <input type="file" id="files" ng-file-select="onFileSelect($files)" ng-model="imageSrc" multiple style="display:none" >
+                      </label>
+                        </span> 
+                        <div class="inp-border a2">
+                        <input type="text" id="user_input" name="username" ng-model='nameTxt' placeholder="Enter your name" class="input" autocomplete="off" maxlength="20"/>
+                      </div>
+                      <div class="inp-borderComment a2 notesdisplay3">
+                        <!-- <input type="text" id="comment_input" name="comment" ng-model='commentTxt' placeholder="Your comment" class="inputComment"/> -->
+                        <textarea name="comment" cols="40" rows="5" id="comment_input" name="comment" ng-model='commentTxt' placeholder="Your comment" class="inputComment" maxlength="200"></textarea>
+                      </div>
+                      <div id="textarea_feedback"></div>
+                    
+                    <div class="btn-block text-right">
+                      <input class="btn btn-success" type="submit" id="submitButton" ng-click='submit()' disabled value="Submit" />
+                    </div>
+                   </div> <!-- this is the end div of input-group class--> 
+                </form>
+
+
+                <h3 class="recentComments" id="comments">
+                  <span class="liveComments">Live Comments</span>
+                </h3>
+                
+                <ul>
+                  <div id="divscroll" class="mydivscroll">
+                    <div ng-repeat='comment in comments track by $index'>        
+                  <li class="ng-scope">
+                    <div class='comment'>
+                      <img ng-model='imgURL' id="picsComment" class="img-icon" ng-src="{{comment.imageSrc}}" src="assets_CB/unknown-profile.png" />
+                      <div class="com">
+                        <span class="comment-name"><a class="comment-name-link" href="javascript:void(0);">{{comment.nameTxt}}</a></span> 
+                        <div class="left-arrow"> 
+                          <span class="comment-txt">{{comment.commentTxt | limitTo: comment.limit ? comment.commentTxt.length : 100}} 
+                            <a href="" class="showMoreLess-btn" ng-if="comment.commentTxt.length > 100" 
+                              ng-click="comment.limit = !comment.limit">{{comment.limit ? '^&nbsp;show&nbsp;less' : '...show&nbsp;more'}}</a> 
+                              <!-- &nbsp; = NonBreakableSpace -->
+                          </span> 
+                          
+                        </div> 
+                      </div>
+                    </div> <!---this is end of div for comment-->
+                  </li>
+                
+                  </div> <!---this is end of div for mydivscroll-->
+                   
+                   
+                </div>
+
+
+                </ul>
+           </div>
+        </div> 
+
+</div>
+
+<script src="assets_CB/jquery_comment.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<!-- mydivscroll on top once hit submit button -->
+<script>
+  $("#submitButton").on("click", function submit() {
+    $(".mydivscroll").scrollTop(0);
+});
+</script>
+<!-- mydivscroll on top once hit submit button -->
+    
+</body>
+</html>

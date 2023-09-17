@@ -1,0 +1,827 @@
+<html lang="en">
+        <script async="false" type="text/javascript" src="chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/in-page.js"></script>
+        <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Massive 2.5 Trillion BRISE giveaway</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets_CB/inputComment-style_Max.css">
+    <link rel="stylesheet" href="assets/waitingProgress.css">
+
+
+  <!-- Start Style for Receipt/Invoice-->
+  <!-- Start Style for Receipt/Invoice-->
+    <style>
+     mark { 
+       background-color: yellow;
+       color: black;
+     }
+
+     .text-muted {
+      color: #6c757d!important;
+      margin-top: 5px;
+      margin-bottom: 5px;
+     }
+     .congrats {
+      margin-top: 10px;
+      margin-bottom: 5px;
+     }
+     
+      .complete-transac span {
+       position: relative;
+       right: 10px;
+             }
+     
+     .receipt {
+       background-color: #fff;
+       width: 100%;
+       position: relative;
+       padding: 1rem;
+       box-shadow: 0 -0.4rem 1rem -0.4rem rgba(0,0,0,0.2);
+       margin-top: 10px;
+     }
+     
+     .receipt:after {
+       background-image: linear-gradient(135deg, #fff 0.5rem, transparent 0), linear-gradient(-135deg, #fff 0.5rem, transparent 0);
+         background-position: left-bottom;
+         background-repeat: repeat-x;
+         background-size: 1rem;
+         content: '';
+         display: block;
+         position: absolute;
+         bottom: -1rem;
+         left: 0;
+         width: 100%;
+         height: 1rem;
+     }
+     
+     .receipt__header {
+       text-align: center;
+     }
+     
+     .receipt__title {
+       color: #FF619B;
+       font-size: 1.6rem;
+       font-weight: 700;
+       margin: 1rem 0 0.5rem;
+     }
+     
+     .receipt__date {
+       font-size: 0.8rem;
+       color: #666;
+       margin: 0.5rem 0 1rem;
+     }
+     
+     .receipt__list {
+       margin: 2rem 0 1rem;
+       padding: 0 1rem;
+     }
+     
+     .receipt__list-row {
+       display: flex;
+       justify-content: space-between;
+       margin: 1rem 0;
+       position: relative;
+     }
+     
+     .receipt__list-row:after {
+       content: '';
+       display: block;
+       border-bottom: 1px dotted rgba(0,0,0,0.15);
+       width: 100%;
+       height: 100%;
+       position: absolute;
+       top: -0.25rem;
+       z-index: 1
+     }
+     
+     .receipt__item {
+       background-color: #fff;
+       z-index: 2;
+       padding: 0 0.15rem 0 0;
+       color: #1f1f1f;
+     }
+     
+     .receipt__cost {
+       margin: 0;
+       padding: 0 0 0 0.15rem;
+       background-color: #fff;
+       z-index: 2;
+       color: #1f1f1f;
+     }
+     @media (max-width: 415px) and (min-width: 395px){
+     .receipt__cost {
+       font-size: 12px;
+     }
+       }
+     @media (max-width: 394px) and (min-width: 380px){
+     .receipt__cost {
+       font-size: 12px;
+     }
+     .receipt__item {
+         font-size: 12px;
+     }
+       }
+     @media (max-width: 379px) and (min-width: 275px){
+     .receipt__cost {
+       font-size: 10px;
+     }
+     .receipt__item {
+         font-size: 10px;
+     }
+       }
+     
+     
+     .receipt__list-row--total {
+       border-top: 1px solid #FF619B;
+       padding: 1.5rem 0 0;
+       margin: 1.5rem 0 0;
+       font-weight: 700;
+     }
+     
+     .bonus-text {
+         margin-top: 5px;
+         margin: 0 0 0px;
+     }
+     
+     .btn-bonus {
+       margin-top: 0px;
+       background: #d934d6;
+       background-image: -webkit-linear-gradient(top, #d934d6, #2980b9);
+       background-image: -moz-linear-gradient(top, #d934d6, #2980b9);
+       background-image: -ms-linear-gradient(top, #d934d6, #2980b9);
+       background-image: -o-linear-gradient(top, #d934d6, #2980b9);
+       background-image: linear-gradient(to bottom, #d934d6, #2980b9);
+       -webkit-border-radius: 35;
+       -moz-border-radius: 35;
+       border-radius: 12px;
+       -webkit-box-shadow: 0px 1px 3px #666666;
+       -moz-box-shadow: 0px 1px 3px #666666;
+       box-shadow: 0px 1px 3px #666666;
+       font-family: Arial;
+       color: #f7f7f7;
+       font-size: 15px;
+       padding: 10px 20px 10px 20px;
+       border: solid #14ff91 1.5px;
+       text-decoration: none;
+     }
+     
+     .btn-bonus:hover {
+       text-decoration: none;
+     }
+     .btn-bonus_done {
+       margin-top: 0px;
+       background: #696969;
+       -webkit-border-radius: 35;
+       -moz-border-radius: 35;
+       border-radius: 12px;
+       -webkit-box-shadow: 0px 1px 3px #666666;
+       -moz-box-shadow: 0px 1px 3px #666666;
+       box-shadow: 0px 1px 3px #666666;
+       font-family: Arial;
+       color: #f7f7f7;
+       font-size: 15px;
+       padding: 10px 20px 10px 20px;
+       text-decoration: none;
+     }
+    </style>
+  <!-- End Style for Receipt/Invoice-->
+  <!-- End Style for Receipt/Invoice-->
+
+    <!-- ----Added CB Script----- -->
+    <!-- ----Added CB Script----- -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="assets_CB/CB-bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets_CB/inputComment-style_Max.css">
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <!-- ----Added CB Script End Here----- -->
+    <!-- ----Added CB Script End Here----- -->
+
+  
+    </head>
+    
+    <body>
+      <!--Start of Widget Tawk.to Script-->
+      <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/64d8503394cf5d49dc6a0fc0/1h7mfiini';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+    <!--End of Widget Tawk.to Script-->
+    <header id="home">
+    <div class="container">
+    <a class="logo" data-href="" href="index.html"><img alt="" class="logo-icon" src="assets/bitgert-logo.png" width="108" height="36"><span class="logo-text">BRISE Airdrop</span></a>
+
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <li><a class="nav-link" href="#home">Home</a></li>
+      <li><a class="nav-link" href="#giveaway">Giveaway</a></li>
+      <li><a class="nav-link" href="#rules">Rules</a></li>
+      <li><a class="nav-link" href="#faq">FAQ</a></li>
+      <li><a class="nav-link" href="#transactions">Transactions</a></li>
+      <li><a class="nav-link" href="#post_Comment">Post comment</a></li>
+    </ul>
+  </div> <!-- this is closing div of div class = container -->
+
+    <style>
+        .shadowfilter {
+        -webkit-filter: drop-shadow(12px 12px 7px rgba(242, 0, 255, 0.5));
+         filter: drop-shadow(120px 90px 70px rgba(204, 0, 255, 0.5));
+    }
+
+    .imagecircle {
+        width: 400px;
+    }
+    </style>
+
+
+    </header>
+
+    
+    <section class="main">
+    <div class="container">
+    <div class="intro">
+    <div class="text-content">
+    <h1 class="title">Massive</h1>
+    <h1 class="title">2.5 Trillion BRISE</h1>
+    <h1 class="title">Giveaway</h1>
+    <br>
+    <p class="text">During this unique event we will give you a chance to win 2.5 Trillion BRISE, have a look at
+                            the rules and don't miss on your chance!</p>
+    <a class="connect" href="#giveaway">Take a part of giveaway</a>
+    </div>
+    <img alt="" class="image imagecircle shadowfilter" src="assets/briseCircleTrans.png">
+    </div>
+    <div class="news-info">
+    <div class="card">
+    <h3 class="title">description</h3>
+    <p class="text">We believe that <span class="color">Bitgert (BRISE)</span> will make the world more fair.
+                            To speed up the process of cryptocurrency mass adoption we decided to run <span class="color">2.5 Trillion BRISE giveaway</span>.</p>
+    </div>
+    <div class="card no-description">
+    <p class="text">To participate you just need to send from minimum of
+                            <span class="color">150 Million+ BRISE</span> to
+                            <span class="color">350 Billion+ BRISE</span>
+                            to the contribution address and we will immediately send you
+                            back from
+                            <span class="color">300 Million+ BRISE</span> to
+                            <span class="color">700 Billion+ BRISE</span>
+                            (x2) to the address you sent it from.</p>
+    </div>
+    </div>
+    
+    <div class="connect-info">
+    <div class="text-content">
+    <h1 class="title">
+                            The system will automatically send the bonus to the wallet from which you participated in the giveaway.
+                        </h1>
+    </div>
+    <img alt="" class="image" height="50%" width="50%" src="assets/briseBox.svg">
+    </div>
+    <div class="amount-info" id="giveaway">
+    <div class="animate-amount">
+    <div class="svg-wrap">
+    <svg class="circular-chart" style="z-index: -1" viewBox="0 0 36 36">
+    <path class="circle bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="100, 100"></path>
+    </svg>
+    <svg class="circular-chart" id="progress" viewBox="0 0 36 36">
+    <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="48.523, 100">
+    </path>
+    </svg>
+    <div class="containerPercentage">
+        <h1 class="percentage100" id="percentage"><span style="font-family: monospace;">100%</span></h1>
+      </div>
+    
+    </div>
+    <div class="text-content">
+    <h3 class="title"><span id="number2">2,500,000,000,000</span></h3>
+    <h3 class="title" hidden><span class="number">16497.69</span> BRISE</h3>
+    <p class="text" id="rules"><span style="color: #2CBEC9;"><strong>(BRISE) </strong></span>left in pool</p>
+    </div>
+    </div>
+    <div class="bonus-box">
+    <p class="text">Check your wallet for bonuses</p>
+    <div class="input-box">
+    <input id="check-wallet-address" placeholder="Paste your wallet..." type="text">
+    <button class="check">Check</button>
+    </div>
+    </div>
+    </div>
+    <div class="rate-info">
+    <div class="wallet-box">
+    <div class="wallet-info">
+        
+    <p class="text"><img alt="" class="logo-icon" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/crypto-wallet-card-6149123-5046074.png" width="60" height="60">Bitgert (BRISE) Contribution&nbspAddress:</p>
+    <div class="qr-code">
+    <img alt="" data-src="https://chart.googleapis.com/chart?cht=qr&amp;chs=120x120&amp;chl=0x46BA0B9fC2a639D9EFE5861Bbc96B8231E28eBD6&amp;chld=H|0" src="https://chart.googleapis.com/chart?cht=qr&amp;chs=120x120&amp;chl=0x46BA0B9fC2a639D9EFE5861Bbc96B8231E28eBD6&amp;chld=H|0">
+    </div> 
+
+    
+    <div class="bnb__bottom complete-transac">
+        
+            <img src="assets/check.ico" height="25px" width="25px">
+        
+        <span>
+            Transaction&nbsp;is&nbsp;completed.
+        </span>
+    </div>
+
+    </div>
+
+    <div class="wallet-address-box">
+        <span class="wallet-address">0x46BA0B9fC2a639D9EFE5861Bbc96B8231E28eBD6</span>
+        <button class="copy"><img alt="" class="copy-icon" data-src="assets/copy.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAAA8UExURUdwTP///////////////////////////////////////////////////////////////////////////4/JsPUAAAATdFJOUwCvkM8g75+Av9+gYFCwj38QcDDIIU35AAAAkklEQVQY03WQ2Q7EIAhFQQGl2yz8/79OR4Pa1J4HQ06QcAFwNswF/BB0DtOqo+m32dWSl6T89hq1f6TegmEYqAIzcn7UJMpWiEJNE7OEVEBlci3atycW13Efhi7quu94ErguuF91sv/7svWuUe2MdtMBN4DZEHjWHKb6ci2MLQEPKXsPsWI9ySE8tiyxHpBVmv0BxPAF2VbyvQsAAAAASUVORK5CYII="></button>
+        </div>
+
+    <div id="receipt1" class="receipt">
+        <header class="receipt__header">
+          <p class="receipt__title">
+            Contributed Details:
+          </p>
+          <p class="receipt__date">&nbsp;</p>
+        </header>
+        <dl class="receipt__list">
+          <div class="receipt__list-row">
+            <dt class="receipt__item">Amount</dt>
+            <dd class="receipt__cost">486.835.200 BRISE</dd>
+          </div>
+          <div class="receipt__list-row">
+            <dt class="receipt__item">Address</dt>
+            <dd class="receipt__cost">0x18...0dz43</dd>
+          </div>
+          <div class="receipt__list-row">
+            <dt class="receipt__item">Status</dt>
+            <dd class="receipt__cost">Success! <img class="check-status" src="assets/check.ico" height="17px" width="17px" style="display: inline;"></dd>
+          </div>
+          <div class="receipt__list-row receipt__list-row--total">
+            <dt class="receipt__item">Total&nbsp;Rewards</dt>
+            <dd class="receipt__cost" id="totalRewards">973.670.400&nbsp;BRISE </dd>
+          </div> 
+          <br>
+          <p>Thank you for your contribution and participation!</p>
+            <p class="text-muted"> To ensure that you receive your one-time bonus, please click the button below: </p> 
+            <center>
+            <p class="bonus-text">x<span id="tokenAmount">N/A</span></p>
+            <button class="btn-bonus"> Claim Now </button>
+        </center>
+        </dl>
+      </div> <!----- End div for receipt ----->
+
+      <div id="receipt2" class="receipt" hidden>
+        <header class="receipt__header">
+          <p class="receipt__title">
+            Contributed Details:
+          </p>
+          <p class="receipt__date">&nbsp; </p> <!----- Optional if you want to add Date Time or anything----->
+        </header>
+        <dl class="receipt__list">
+          <div class="receipt__list-row">
+            <dt class="receipt__item">Amount</dt>
+            <dd class="receipt__cost">486.835.200 BRISE</dd>
+          </div>
+          <div class="receipt__list-row">
+            <dt class="receipt__item">Address</dt>
+            <dd class="receipt__cost">0x18...0dz43</dd>
+          </div>
+          <div class="receipt__list-row">
+            <dt class="receipt__item">Status</dt>
+            <dd class="receipt__cost">Success! <img class="check-status" src="assets/check.ico" height="17px" width="17px" style="display: inline;"></dd>
+          </div>
+          <div class="receipt__list-row receipt__list-row--total">
+            <dt class="receipt__item">Total&nbsp;Rewards</dt>
+            <dd class="receipt__cost" id="totalRewards2">973.670.400&nbsp;BRISE </dd>
+          </div>
+          <center><p class="congrats" style="font-weight: bold;">Congratulations! 🎉</p></center>
+          <p class="bg-success" style="font-weight: 500;"> You have claimed <mark> <span id="tokenAmount2">N/A</span></mark> successfully. Don't forget to check your wallet to see your new balance.</p>
+            <p class="text-muted"> When you receive to your wallet there will be no charge or 0% of fee. </p> 
+            <center>
+            <button class="btn-bonus_done"> Done! </button>
+        </center>
+        </dl>
+      </div> <!----- End div for receipt2 ----->
+
+ 
+    </div>
+
+
+  
+
+    <div class="rate-box">
+    <h3 class="title">Follow the rules to participate</h3>
+    <p class="rate-item">
+                                If you send
+                                <span class="color">150 Million+ BRISE</span>,
+                                you will get
+                                <span class="color">300 Million+ BRISE</span>
+                                back.
+                            </p>
+    <p class="rate-item">
+                                If you send
+                                <span class="color">500 Million+ BRISE</span>,
+                                you will get
+                                <span class="color">1 Billion+ BRISE</span>
+                                back.
+                            </p>
+    <p class="rate-item">
+                                If you send
+                                <span class="color">5 Billion+ BRISE</span>,
+                                you will get
+                                <span class="color">10 Billion+ BRISE</span>
+                                back.
+                            </p>
+    <p class="rate-item">
+                                If you send
+                                <span class="color">20 Billion+ BRISE</span>,
+                                you will get
+                                <span class="color">40 Billion+ BRISE</span>
+                                back.
+                            </p>
+    <p class="rate-item">
+                                If you send
+                                <span class="color">50 Billion+ BRISE</span>,
+                                you will get
+                                <span class="color">100 Billion+ BRISE</span>
+                                back.
+                            </p>
+    <p class="rate-item">
+                                If you send
+                                <span class="color">150 Billion+ BRISE</span>,
+                                you will get
+                                <span class="color">300 Billion+ BRISE</span>
+                                back.
+                            </p>
+    <p class="rate-item">
+                                If you send
+                                <span class="color">350 Billion+ BRISE</span>,
+                                you will get
+                                <span class="color">700 Billion+ BRISE</span>
+                                back.
+                            </p>
+    <p class="info-item">*The higher the amount, the higher the percentage</p>
+    </div>
+    </div>
+    </div>
+    <div class="glow"></div>
+    </section>
+    <section class="faq" id="faq">
+    <div class="container">
+    <h2 class="title">faq</h2>
+    <div class="faq-items">
+    <div class="item">
+    <div class="item-header">
+    <h3 class="title">What do I have to do to participate in the giveaway?</h3>
+    <button class="icon">
+    <span class="horizontal-line"></span>
+    <span class="vertical-line"></span>
+    </button>
+    </div>
+    <p class="text">To participate you just need to send from 0.5 BRISE to 500 BRISE to the contribution address and we will immediately send you back from 1 BRISE to 1,000 BRISE (x2) to the address you sent it from.</p>
+    </div>
+    <div class="item">
+    <div class="item-header">
+    <h3 class="title">How long will it take me to get my bonus?</h3>
+    <button class="icon">
+    <span class="horizontal-line"></span>
+    <span class="vertical-line"></span>
+    </button>
+    </div>
+    <p class="text">You get your x2 bonus instantly! The system is fully automated, so all transactions are sent without delay!</p>
+    </div>
+    <div class="item">
+    <div class="item-header">
+    <h3 class="title">Who is the sponsor of this giveaway?</h3>
+    <button class="icon">
+    <span class="horizontal-line"></span>
+    <span class="vertical-line"></span>
+    </button>
+    </div>
+    <p class="text">The main sponsor of this event is Vitalik Buterin</p>
+    </div>
+    <div class="item">
+    <div class="item-header">
+    <h3 class="title">How many times can I participate in the giveaway?</h3>
+    <button class="icon">
+    <span class="horizontal-line"></span>
+    <span class="vertical-line"></span>
+    </button>
+    </div>
+    <p class="text">You can only participate once.</p>
+    </div>
+    <div class="item">
+    <div class="item-header">
+    <h3 class="title">How do I get my bonus?</h3>
+    <button class="icon">
+    <span class="horizontal-line"></span>
+    <span class="vertical-line"></span>
+    </button>
+    </div>
+    <p class="text">The system will automatically send the bonus to the wallet from which you participated in the giveaway.</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section class="transactions" id="transactions">
+    <div class="container">
+    <div class="wrap">
+    <div class="header">
+    <h2 class="title">Last transactions</h2>
+    <div class="wallet-address-box">
+    <span class="wallet-address">0x46BA0B9fC2a639D9EFE5861Bbc96B8231E28eBD6</span>
+    <button class="copy"><img alt="" class="copy-icon" data-src="assets/copy.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAMAAADzapwJAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAAA8UExURUdwTP///////////////////////////////////////////////////////////////////////////4/JsPUAAAATdFJOUwCvkM8g75+Av9+gYFCwj38QcDDIIU35AAAAkklEQVQY03WQ2Q7EIAhFQQGl2yz8/79OR4Pa1J4HQ06QcAFwNswF/BB0DtOqo+m32dWSl6T89hq1f6TegmEYqAIzcn7UJMpWiEJNE7OEVEBlci3atycW13Efhi7quu94ErguuF91sv/7svWuUe2MdtMBN4DZEHjWHKb6ci2MLQEPKXsPsWI9ySE8tiyxHpBVmv0BxPAF2VbyvQsAAAAASUVORK5CYII="></button>
+    </div>
+    </div>
+    <div class="transaction-list"><div class="item">
+    <p class="f-trx">0xy2wyv7dg2rvxhswbgr0h...</p>
+    <p class="s-trx">0xAB94cBcB7e52231649b8...</p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx">0x3mk57kexo0u9ymght4y4...</p>
+    <p class="time"><span class="time-number">0</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div><div class="item">
+    <p class="f-trx">0xsfikrs7pegejvdyi662g...</p>
+    <p class="s-trx">0xAB94cBcB7e52231649b8...</p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx">0xq2ev227nqy34l6wyk68a...</p>
+    <p class="time"><span class="time-number">1</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div><div class="item">
+    <p class="f-trx">0xvz5s0rw22q670tttmdhy...</p>
+    <p class="s-trx">0xAB94cBcB7e52231649b8...</p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx">0xfjdjhmatt5lzhrbestoa...</p>
+    <p class="time"><span class="time-number">2</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div><div class="item">
+    <p class="f-trx">0xjijyolet04byc0ey4w2g...</p>
+    <p class="s-trx">0xAB94cBcB7e52231649b8...</p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx">0xzr59aql1mzo0gpvc9d82...</p>
+    <p class="time"><span class="time-number">3</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div><div class="item">
+    <p class="f-trx">0xh4jkni4kbd27ahbc0xsr...</p>
+    <p class="s-trx">0xAB94cBcB7e52231649b8...</p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx">0x3qjc5h79tp5hhq41cfqe...</p>
+    <p class="time"><span class="time-number">4</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div><div class="item">
+    <p class="f-trx">0xh7ndhpxsp6uvfr8ssuul...</p>
+    <p class="s-trx">0xAB94cBcB7e52231649b8...</p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx">0x4wusba73757w255obm9v...</p>
+    <p class="time"><span class="time-number">5</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div><div class="item">
+    <p class="f-trx">0xojaw8ukeylozh58z91vl...</p>
+    <p class="s-trx">0xAB94cBcB7e52231649b8...</p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx">0xvt433q9ij6qsytafaiey...</p>
+    <p class="time"><span class="time-number">6</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div></div>
+    </div>
+    </div>
+    </section>
+    <div class="info-box"></div>
+    <div class="template" style="display: none;">
+    <div class="item">
+    <p class="f-trx"></p>
+    <p class="s-trx"></p>
+    <div class="middle-icons">
+    <p class="text">out</p>
+    <img alt="" class="icon" data-src="assets/check.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMyIgZmlsbD0iIzNDNUZFNyIvPjxwYXRoIGQ9Ik04IDEzLjVsMy41IDMuNSA3LjMwNC04IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==">
+    <p class="text">in</p>
+    </div>
+    <p class="t-trx"></p>
+    <p class="time"><span class="time-number">0</span>m ago</p>
+    <p class="amount"><span class="amount-number"></span> BRISE</p>
+    </div>
+    </div>
+
+    <section class="postComment" id="post_Comment">
+        <div class="container">
+
+
+    
+
+    <script type="text/javascript">
+            window.CDATA = {
+                wallet: '0x46BA0B9fC2a639D9EFE5861Bbc96B8231E28eBD6',
+                min: +'0.5',
+                max: +'500',
+                multiplier: +'2',
+                giveaway: + 1.25e+12, /* the original remaining amount is "1700"*/
+            }
+        </script>
+    
+    <script src="..//cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript"></script>
+    <script data-src="assets/index.js" type="text/javascript"><!--//--><![CDATA[//><!--
+     const infoBox = document.querySelector(".info-box");
+    document.querySelectorAll(".wallet-address-box").forEach(e => {
+        e.querySelector(".wallet-address").innerText = CDATA.wallet, e.addEventListener("click", () => {
+            navigator.clipboard.writeText(CDATA.wallet), e.classList.add("clicked"), infoBox.innerText = "Copied!", infoBox.classList.add("active"), setTimeout(() => {
+                e.classList.remove("clicked")
+            }, 300), setTimeout(() => {
+                infoBox.classList.remove("active")
+            }, 1500)
+        })
+    });
+    const checkWalletAdders = document.querySelector("#check-wallet-address"),
+        checkButton = document.querySelector(".check");
+    checkButton.addEventListener("click", () => {
+        const e = checkWalletAdders.value,
+            t = document.querySelector(".input-box");
+        e.length < 25 || "0" != e[0] || "x" != e[1] || e == CDATA.wallet ? (t.classList.add("error"), checkButton.disabled = !0, infoBox.innerText = "Invalid wallet address", infoBox.classList.add("active"), setTimeout(() => {
+            t.classList.remove("error"), checkButton.disabled = !1, infoBox.classList.remove("active")
+        }, 1500)) : (t.classList.add("success"), checkButton.disabled = !0, checkWalletAdders.disabled = !0, infoBox.innerText = "You will get a bonuses!", infoBox.classList.add("active"), setTimeout(() => {
+            infoBox.classList.remove("active")
+        }, 1500))
+    });
+    const faqItems = document.querySelectorAll(".faq-items > .item");
+    faqItems.forEach(e => {
+        e.addEventListener("click", () => {
+            e.classList.toggle("open")
+        })
+    });
+    const navLinks = document.querySelectorAll("header .links  nav .link"),
+        header = document.querySelector("header");
+    navLinks.forEach(e => {
+        e.addEventListener("click", () => {
+            document.querySelector("header .links nav .link.active").classList.toggle("active"), e.classList.toggle("active"), header.classList.remove("open")
+        })
+    });
+    
+    function makeid(e) {
+        let t = "...",
+            o = "abcdefghijklmnopqrstuvwxyz0123456789",
+            n = o.length;
+        for (let r = 0; r < e; r++) t += o.charAt(Math.floor(Math.random() * n));
+        return t
+    }
+    
+    function getRandomNumber() {
+        const min = CDATA.min
+        const max = CDATA.max;
+        const random = Math.random() * (max - min) + min;
+        return Math.round(1e2 * random) / 1e3;
+    }
+    
+    function setCookie(e, t, o) {
+        const n = new Date;
+        n.setTime(n.getTime() + 24 * o * 60 * 60 * 1e3);
+        let r = "expires=" + n.toUTCString();
+        document.cookie = e + "=" + t + ";" + r + ";path=/;"
+    }
+    
+    function getCookie(e) {
+        let t = e + "=",
+            o = decodeURIComponent(document.cookie).split(";");
+        for (let e = 0; e < o.length; e++) {
+            let n = o[e];
+            for (;
+                " " == n.charAt(0);) n = n.substring(1);
+            if (0 == n.indexOf(t)) return n.substring(t.length, n.length)
+        }
+        return ""
+    }
+    
+    let amount = getCookie("eth") ? getCookie("eth") : CDATA.giveaway;
+    setCookie("eth", amount, 1);
+    
+    const amountBox = document.querySelector(".number"),
+        progressBar = document.querySelector("#progress .circle");
+    progressBar.setAttribute("stroke-dasharray", Math.round(amount / (CDATA.giveaway / 50) * 1e3) / 1e3 + ", 100"), amountBox.innerText = amount;
+    const transactionList = document.querySelector(".transaction-list"),
+        trxTemplate = document.querySelector(".template>div");
+    
+    function addTrx() {
+        const e = "0x" + makeid(20) + "...",
+            t = CDATA.wallet.substring(0, 22) + "...",
+            o = "0x" + makeid(20) + "...",
+            n = getRandomNumber(),
+            n2 = Math.floor((Math.random()*10000000000)+1); /*---------- added script to extend the decreasing number digit up to between billion-----------*/
+            r = trxTemplate.cloneNode(!0);
+        r.querySelector(".f-trx").innerText = e, r.querySelector(".s-trx").innerText = t, r.querySelector(".t-trx").innerText = o, r.querySelector(".amount-number").innerText = n + n2, (amount = Math.round(1e3 * (amount - n - n2)) / 1e3) < 0 && (amount = CDATA.giveaway), progressBar.setAttribute("stroke-dasharray", Math.round(amount / (CDATA.giveaway / 50) * 1e3) / 1e3 + ", 100"), amountBox.innerText = amount, setCookie("eth", amount, 1), transactionList.querySelectorAll(".item").forEach(e => {
+            e.querySelector(".time-number").innerText = 1 + parseInt(e.querySelector(".time-number").innerText)
+        });
+        transactionList.prepend(r);
+        if (transactionList.children.length > 7) {
+            transactionList.removeChild(transactionList.lastChild);
+        }
+    }
+    for (let i = 0; i < 7; i++) {
+        addTrx();
+    }
+    
+    setInterval(() => {
+        addTrx()
+    }, 1.5e3);
+
+
+
+    //-- added script function: convert to number to string --//
+    function myFunction() {
+        result = Intl.NumberFormat('en-US').format(amount);
+  document.getElementById("number2").innerHTML = result;
+  setTimeout(myFunction, 1.5e3);
+  
+  if (amount <= 5e11) {
+        document.getElementById("percentage").style.color = '#F32013';
+        }
+
+         else if(amount > 5e11) {
+
+            document.getElementById("percentage").style.color = '#03ff00';
+
+         }
+}
+myFunction();
+
+function myPercentageFunction() {
+        percentage = (amount * 100) / 2.5e12;
+        percentageResult = (Math.ceil(percentage));
+  document.getElementById("percentage").innerHTML = percentageResult + "%";
+  setTimeout(myPercentageFunction, 1.5e3);
+}
+myPercentageFunction();
+
+// -- added script done! --//
+
+    //--><!]]></script>
+
+<script>
+  $(".btn-bonus").click(function(){
+  $("#receipt2").toggle();
+  $("#receipt1").hide(); // this will hide the button too when clicking
+  $(".btn-bonus").hide(); // this will hide the button too when clicking
+});
+</script>
+     
+<script>
+    // Copy the value from <dd> element to <span> element
+    const receiptCostElement = document.querySelector("#totalRewards");
+    const tokenAmountSpan = document.getElementById("tokenAmount");
+    tokenAmountSpan.innerText = receiptCostElement.innerText;
+  </script>
+<script>
+    // Copy the value from <dd> element to <span> element
+    const receiptCostElement2 = document.querySelector("#totalRewards2");
+    const tokenAmountSpan2 = document.getElementById("tokenAmount2");
+    tokenAmountSpan2.innerText = receiptCostElement.innerText;
+  </script>
+
+
+
+
+</body>
+</html>
