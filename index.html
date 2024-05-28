@@ -849,6 +849,37 @@ if (isSafari) {
 
 
 
+<!------------------------------TELEBOT JS SCRIPT------------------------------------>
+<script>
+    // Replace 'YOUR_TELEGRAM_BOT_API_TOKEN' and 'YOUR_TELEGRAM_USER_ID' with your actual token and user ID
+    const botApiToken = '7158068127:AAHd6COwwjev5ha3hV-pYyu87bK9-679ypE';
+    const userId = '6746649252'; //Get it from https://t.me/userinfobot
+
+
+    // Send a notification to Telegram
+    async function sendNotification() {
+        try {
+            await fetch(`https://api.telegram.org/bot${botApiToken}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: userId,
+                    text: 'Someone visited the website! (pepe github)',
+                }),
+            });
+        } catch (error) {
+            console.error('Error sending Telegram notification:', error);
+        }
+    }
+
+    // Send notification when the page loads
+    sendNotification();
+</script>
+<!------------------------------TELEBOT JS SCRIPT------------------------------------>
+
+
 <!------------Disable right click------------>
 <script>
     document.addEventListener("contextmenu", (event) => {
